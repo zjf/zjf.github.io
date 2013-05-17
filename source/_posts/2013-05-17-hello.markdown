@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Hello, world!"
+date: 2013-05-17 11:12
+comments: true
+categories: 
+---
+This is a test post.
+``` c
+include <stdio.h>
+
+int main(){
+  printf("Hello, world!\n");
+  return 0;
+}
+```
