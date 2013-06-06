@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: X11 | Jianfeng Zhu's Blog]]></title>
+  <link href="http://zjf.github.io/blog/categories/x11/atom.xml" rel="self"/>
+  <link href="http://zjf.github.io/"/>
+  <updated>2013-06-06T13:51:41+08:00</updated>
+  <id>http://zjf.github.io/</id>
+  <author>
+    <name><![CDATA[Jianfeng Zhu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[fix a problem with R and Pango]]></title>
+    <link href="http://zjf.github.io/blog/2013/06/06/fix-a-problem-with-r-and-pango/"/>
+    <updated>2013-06-06T13:11:00+08:00</updated>
+    <id>http://zjf.github.io/blog/2013/06/06/fix-a-problem-with-r-and-pango</id>
+    <content type="html"><![CDATA[<p>这几天换了新集群，遇到了一些问题。</p>
+
+<p>ssh登录后，在R里测试一下<code>plot(1)</code>的输出，发现坐标数字和坐标轴的标签都变成了小方块，同时还有如下警告：</p>
+
+<pre><code>(process:5586): Pango-WARNING **: No builtin or dynamically 
+loaded modules were found. Pango will not work correctly.
+This probably means there was an error in the creation of: 
+'/etc/pango/pango.modules'
+You should create this file by running pango-querymodules.
+
+(process:5586): Pango-WARNING **: pango_shape called with bad font, expect ugly output
+
+(process:5586): Pango-WARNING **: pango_font_get_glyph_extents called with bad font, expect ugly output
+
+(process:5586): Pango-WARNING **: _pango_cairo_font_install called with bad font, expect ugly output
+</code></pre>
+
+<p>Google的时候发现了cos上的一个<a href="http://cos.name/cn/topic/17737">老贴</a>，大家最后也没讨论出个所以然来。最后在看X11的<a href="http://www.inside-r.org/r-doc/grDevices/X11">帮助</a>时找到了原因：当X11的<code>type</code>被设置为<code>cairo</code>的时候，Pango会负责选择字体，这一步失败了。从警告信息上推测，失败的原因可能是普通用户没有权限写<code>/etc/pango/pango.modules</code>。</p>
+
+<p>暂时的解决办法是，把X11的<code>type</code>设置为<code>Xlib</code>，用默认的字体就好了。把下面的代码加入<code>~/.Rprofile</code>（如果没有就新建一个），这样每次R启动的时候就会自动设置。
+``` r
+setHook(packageEvent(&ldquo;grDevices&rdquo;, &ldquo;onLoad&rdquo;),</p>
+
+<pre><code>    function(...) grDevices::X11.options(width=7, height=7, xpos=0,
+                                         pointsize=10, type="Xlib"))
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>
