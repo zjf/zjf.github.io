@@ -4,7 +4,7 @@
   <title><![CDATA[Jianfeng Zhu's Blog]]></title>
   <link href="http://zjf.github.io/atom.xml" rel="self"/>
   <link href="http://zjf.github.io/"/>
-  <updated>2013-06-06T14:37:02+08:00</updated>
+  <updated>2013-08-13T21:31:20+08:00</updated>
   <id>http://zjf.github.io/</id>
   <author>
     <name><![CDATA[Jianfeng Zhu]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Can't re-attach tmux [Fixed]]]></title>
+    <link href="http://zjf.github.io/blog/2013/08/13/cant-re-attach-tmux/"/>
+    <updated>2013-08-13T19:53:00+08:00</updated>
+    <id>http://zjf.github.io/blog/2013/08/13/cant-re-attach-tmux</id>
+    <content type="html"><![CDATA[<p>使用<a href="http://tmux.sourceforge.net">tmux</a>管理session和窗口非常方便，特别的当在一个傲娇的集群上工作的时候。最近两天发现一个问题，有时detach(<code>prefix+d</code>)一个session之后，无法再attach上了，试过几种方法都不行：</p>
+
+<ul>
+<li><code>tmux attach</code></li>
+<li><code>tmux attach -t work</code> （work是之前的session名字）</li>
+<li><code>tmux -L ~/tmp/tmux-1627/defualt attach</code>
+在<a href="http://superuser.com/questions/279169/tmux-died-and-says-no-sessions-is-there-any-way-to-recover">superuser</a>上找到了答案:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">kill</span> -10 <span class="o">[</span>tmux pid<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+给tmux发一个信号，但不会杀掉它。虽然不知道原理，但至少能找回之前的session了！</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[fix a problem with R and Pango]]></title>

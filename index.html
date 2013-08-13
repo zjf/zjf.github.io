@@ -9,7 +9,8 @@
   <meta name="author" content="Jianfeng Zhu">
 
   
-  <meta name="description" content="这几天换了新集群，遇到了一些问题。 ssh登录后，在R里测试一下plot(1)的输出，发现坐标数字和坐标轴的标签都变成了小方块，同时还有如下警告： (process:5586): Pango-WARNING **: No builtin or dynamically loaded modules &hellip;">
+  <meta name="description" content="使用tmux管理session和窗口非常方便，特别的当在一个傲娇的集群上工作的时候。最近两天发现一个问题，有时detach(prefix+d)一个session之后，无法再attach上了，试过几种方法都不行： tmux attach
+tmux attach -t work （ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -64,6 +65,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/13/cant-re-attach-tmux/">Can&#8217;t Re-attach Tmux [Fixed]</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-13T19:53:00+08:00" pubdate data-updated="true">Aug 13<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>使用<a href="http://tmux.sourceforge.net">tmux</a>管理session和窗口非常方便，特别的当在一个傲娇的集群上工作的时候。最近两天发现一个问题，有时detach(<code>prefix+d</code>)一个session之后，无法再attach上了，试过几种方法都不行：</p>
+
+<ul>
+<li><code>tmux attach</code></li>
+<li><code>tmux attach -t work</code> （work是之前的session名字）</li>
+<li><code>tmux -L ~/tmp/tmux-1627/defualt attach</code>
+在<a href="http://superuser.com/questions/279169/tmux-died-and-says-no-sessions-is-there-any-way-to-recover">superuser</a>上找到了答案:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">kill</span> -10 <span class="o">[</span>tmux pid<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+给tmux发一个信号，但不会杀掉它。虽然不知道原理，但至少能找回之前的session了！</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -191,6 +244,10 @@ You should create this file by running pango-querymodules.
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/13/cant-re-attach-tmux/">Can&#8217;t Re-attach Tmux [Fixed]</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/06/06/fix-a-problem-with-r-and-pango/">Fix a Problem With R and Pango</a>
