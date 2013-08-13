@@ -4,7 +4,7 @@
   <title><![CDATA[Jianfeng Zhu's Blog]]></title>
   <link href="http://zjf.github.io/atom.xml" rel="self"/>
   <link href="http://zjf.github.io/"/>
-  <updated>2013-08-13T21:31:20+08:00</updated>
+  <updated>2013-08-13T21:33:55+08:00</updated>
   <id>http://zjf.github.io/</id>
   <author>
     <name><![CDATA[Jianfeng Zhu]]></name>
@@ -18,7 +18,7 @@
     <link href="http://zjf.github.io/blog/2013/08/13/cant-re-attach-tmux/"/>
     <updated>2013-08-13T19:53:00+08:00</updated>
     <id>http://zjf.github.io/blog/2013/08/13/cant-re-attach-tmux</id>
-    <content type="html"><![CDATA[<p>使用<a href="http://tmux.sourceforge.net">tmux</a>管理session和窗口非常方便，特别的当在一个傲娇的集群上工作的时候。最近两天发现一个问题，有时detach(<code>prefix+d</code>)一个session之后，无法再attach上了，试过几种方法都不行：</p>
+    <content type="html"><![CDATA[<p>使用<a href="http://tmux.sourceforge.net">tmux</a>管理session和窗口非常方便，特别是当在一个傲娇的集群上工作的时候。最近两天发现一个问题，有时detach(<code>prefix+d</code>)一个session之后，无法再attach上了，试过几种方法都不行：</p>
 
 <ul>
 <li><code>tmux attach</code></li>
