@@ -4,7 +4,7 @@
   <title><![CDATA[Jianfeng Zhu's Blog]]></title>
   <link href="http://zjf.github.io/atom.xml" rel="self"/>
   <link href="http://zjf.github.io/"/>
-  <updated>2013-08-13T21:33:55+08:00</updated>
+  <updated>2015-02-07T23:17:22+08:00</updated>
   <id>http://zjf.github.io/</id>
   <author>
     <name><![CDATA[Jianfeng Zhu]]></name>
@@ -88,9 +88,9 @@ You should create this file by running pango-querymodules.
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">include</span> <span class="o">&lt;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
 </span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 </span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>

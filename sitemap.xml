@@ -2,30 +2,30 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://zjf.github.io/blog/2013/05/17/hello/</loc>
-        <lastmod>2013-08-13T21:32:03+08:00</lastmod>
+        <lastmod>2015-02-07T23:11:17+08:00</lastmod>
     </url>
     <url>
         <loc>http://zjf.github.io/blog/2013/06/06/fix-a-problem-with-r-and-pango/</loc>
-        <lastmod>2013-06-06T13:51:24+08:00</lastmod>
+        <lastmod>2015-02-07T13:36:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://zjf.github.io/blog/2013/08/13/cant-re-attach-tmux/</loc>
-        <lastmod>2013-08-13T21:33:48+08:00</lastmod>
+        <lastmod>2015-02-07T13:36:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://zjf.github.io/about/</loc>
-        <lastmod>2013-06-06T14:10:10+08:00</lastmod>
+        <lastmod>2015-02-07T13:36:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://zjf.github.io/blog/archives/</loc>
-        <lastmod>2013-08-13T21:33:48+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://zjf.github.io/robots.txt</loc>
-        <lastmod>2013-05-17T11:03:16+08:00</lastmod>
+        <lastmod>2015-02-07T23:11:17+08:00</lastmod>
     </url>
     <url>
         <loc>http://zjf.github.io/</loc>
-        <lastmod>2013-08-13T21:33:48+08:00</lastmod>
+        <lastmod>2015-02-07T23:11:17+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://zjf.github.io/robots.txt</loc>
+        <lastmod>2015-02-07T13:36:48+08:00</lastmod>
     </url>
 </urlset>
