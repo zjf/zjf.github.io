@@ -7,7 +7,7 @@ categories:
 ---
 This is a test post.
 ``` c
-include <stdio.h>
+#include <stdio.h>
 
 int main(){
   printf("Hello, world!\n");
